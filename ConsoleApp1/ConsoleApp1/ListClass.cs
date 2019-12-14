@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ConsoleApp1
 {
-    class ListClass
+    class ListClass<T>
     {
         //        /     
         //array \/          /
@@ -14,11 +14,11 @@ namespace ConsoleApp1
        //add contains 
        //count to keep track of how many items
 
-        int[] array = new int[0];
+        T[] array = new T[0];
 
          
    
-        public int this[int lit]
+        public T this[int lit]
         {
             get
             {
@@ -33,12 +33,12 @@ namespace ConsoleApp1
 
         {
         }
-        public bool containsValue(int num)
+        public bool containsValue(T num)
         {
             bool foundIt = false;
             for(int i =0; i < array.Length;i++)
             {
-                if(num == array[i])
+                if(num.Equals(array[i]))
                 {
                     foundIt = true;
                     return foundIt;
@@ -47,14 +47,14 @@ namespace ConsoleApp1
             return false;
         }
        
-        public void removeValue(int number)
+        public void removeValue(T number)
         {
             
             int indexToRemove = 0;
             bool numberFound = false;
             for (int i = 0; i < array.Length; i++)
             {
-                if (array[i] == number)
+                if (number.Equals(array[i]))
                 {
                     indexToRemove = i;
                     numberFound = true;
@@ -66,7 +66,7 @@ namespace ConsoleApp1
             }
             else
             {
-                int[] temp = new int[array.Length - 1];
+                T[] temp = new T[array.Length - 1];
                 int count = 0;
                 for(int i =0; i < array.Length;i++)
                 {
@@ -80,14 +80,14 @@ namespace ConsoleApp1
             }
           
         }
-        public void addValue(int num)
+        public void addValue(T value)
         {
-            int[] temp = new int[array.Length + 1];
+            T[] temp = new T[array.Length + 1];
             for(int i=0; i < temp.Length;i++)
             {
                 if (i == temp.Length-1)
                 {
-                    temp[i] = num;
+                    temp[i] = value;
                 }
                 else
                 {

@@ -6,9 +6,10 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
+
+            ListClass<string> listClass = new ListClass<string>();
+            ListClass<int> listtiee = new ListClass<int>();
             
-            ListClass listClass = new ListClass();
-         
         }
     }
                                                            }
